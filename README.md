@@ -1,2 +1,846 @@
-# 4weeks
-the best 4 weeks    
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4 Weeks With Eric 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: #4b2435;
+  font-family: 'DM Sans', sans-serif;
+
+  background:
+    radial-gradient(circle at 10% 10%, #ffffff 0 7%, transparent 25%),
+    radial-gradient(circle at 90% 20%, #ffd4e3 0 5%, transparent 22%),
+    linear-gradient(135deg, #fff4f8, #ffe2ec 45%, #fff7fa);
+
+  overflow-x: hidden;
+}
+
+/* dotted background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .35;
+
+  background-image:
+    radial-gradient(#f29ab5 1px, transparent 1px);
+
+  background-size: 28px 28px;
+}
+
+/* NAVIGATION */
+
+nav {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 10;
+
+  padding: 12px 20px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(14px);
+
+  box-shadow: 0 8px 30px rgba(170,70,105,.12);
+
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: #a43e63;
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: #e65386;
+}
+
+/* SECTIONS */
+
+section {
+  min-height: 100vh;
+  padding: 110px 7vw 80px;
+  position: relative;
+}
+
+/* HERO */
+
+.hero {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 850px;
+}
+
+.kicker {
+  color: #d2527d;
+
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: clamp(65px, 12vw, 145px);
+  line-height: .82;
+
+  margin: 24px 0;
+
+  color: #9e3159;
+}
+
+h1 span {
+  color: #ec739c;
+  font-style: italic;
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 1.8;
+
+  color: #815366;
+
+  max-width: 620px;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+
+  margin-top: 34px;
+  padding: 14px 25px;
+
+  border-radius: 999px;
+
+  color: white;
+
+  background: linear-gradient(
+    90deg,
+    #e65386,
+    #f28faf
+  );
+
+  text-decoration: none;
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 25px rgba(221,73,120,.22);
+}
+
+/* FLOATING HEARTS */
+
+.floating {
+  position: absolute;
+
+  font-size: 35px;
+
+  animation:
+    float 4s ease-in-out infinite;
+}
+
+.f1 {
+  left: 10%;
+  top: 25%;
+}
+
+.f2 {
+  right: 12%;
+  top: 31%;
+
+  animation-delay: 1s;
+}
+
+.f3 {
+  left: 17%;
+  bottom: 18%;
+
+  animation-delay: 2s;
+}
+
+.f4 {
+  right: 18%;
+  bottom: 15%;
+
+  animation-delay: .5s;
+}
+
+@keyframes float {
+
+  50% {
+    transform:
+      translateY(-16px)
+      rotate(8deg);
+  }
+
+}
+
+/* TITLES */
+
+.title {
+  text-align: center;
+
+  max-width: 700px;
+
+  margin: 0 auto 48px;
+}
+
+.title h2 {
+  font-size: 55px;
+
+  margin: 10px 0;
+
+  color: #9e3159;
+}
+
+.title p {
+  color: #89596d;
+  line-height: 1.7;
+}
+
+/* WEEK CARDS */
+
+.weeks {
+  max-width: 1050px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 24px;
+}
+
+.card {
+  min-height: 330px;
+
+  padding: 35px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255,255,255,.72);
+
+  border:
+    2px solid rgba(239,126,163,.25);
+
+  box-shadow:
+    0 15px 45px
+    rgba(178,73,111,.10);
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 20px 50px
+    rgba(178,73,111,.18);
+}
+
+.card::after {
+  content: "♡";
+
+  position: absolute;
+
+  right: -12px;
+  bottom: -35px;
+
+  font-size: 150px;
+
+  color: #ffd6e3;
+
+  z-index: 0;
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.week {
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: #d2527d;
+
+  font-weight: 700;
+}
+
+.card h3 {
+  font-size: 38px;
+
+  margin: 18px 0 12px;
+
+  color: #9e3159;
+}
+
+.card p {
+  line-height: 1.8;
+
+  color: #815366;
+}
+
+.quote {
+  margin-top: 22px;
+
+  padding: 15px 18px;
+
+  border-radius: 18px;
+
+  background: #fff0f5;
+
+  color: #b23e68;
+
+  font-family:
+    'Playfair Display',
+    serif;
+
+  font-style: italic;
+}
+
+/* TIMELINE */
+
+.timeline {
+  max-width: 850px;
+
+  margin: 65px auto 0;
+
+  text-align: center;
+}
+
+.timeline-line {
+  height: 3px;
+
+  background: #f3b0c5;
+
+  border-radius: 5px;
+}
+
+.dots {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  margin-top: -12px;
+}
+
+.dot {
+  width: 25px;
+  height: 25px;
+
+  background: #e96b96;
+
+  border: 6px solid #fff1f6;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 2px #f1a4bc;
+}
+
+/* LETTER */
+
+.letter-wrap {
+  max-width: 780px;
+
+  margin: auto;
+}
+
+.letter {
+  background: #fffdfd;
+
+  padding:
+    clamp(35px, 7vw, 70px);
+
+  border-radius:
+    8px 8px 24px 8px;
+
+  box-shadow:
+    0 25px 70px
+    rgba(174,68,108,.16);
+
+  transform: rotate(-.5deg);
+
+  position: relative;
+}
+
+.letter::before {
+  content: "💗";
+
+  position: absolute;
+
+  right: 25px;
+  top: -28px;
+
+  font-size: 50px;
+
+  filter:
+    drop-shadow(
+      0 6px 6px
+      rgba(0,0,0,.08)
+    );
+}
+
+.letter h2 {
+  font-size: 45px;
+
+  color: #9e3159;
+
+  margin-top: 0;
+}
+
+.letter p {
+  font-family:
+    'Playfair Display',
+    serif;
+
+  font-size: 18px;
+
+  line-height: 2;
+
+  color: #603747;
+}
+
+.sign {
+  text-align: right;
+
+  font-family:
+    'Playfair Display',
+    serif;
+
+  font-style: italic;
+
+  font-size: 25px;
+
+  color: #c34b72;
+
+  margin-top: 35px;
+}
+
+/* FINAL */
+
+.final {
+  text-align: center;
+
+  display: grid;
+
+  place-items: center;
+}
+
+.bigheart {
+  font-size: 90px;
+
+  animation:
+    beat 1.5s infinite;
+}
+
+@keyframes beat {
+
+  50% {
+    transform: scale(1.12);
+  }
+
+}
+
+.final h2 {
+  font-size: 75px;
+
+  line-height: 1;
+
+  color: #9e3159;
+
+  margin: 15px;
+}
+
+.final p {
+  color: #87566a;
+
+  font-size: 18px;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+
+  padding: 25px;
+
+  color: #b46b84;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 9px;
+  }
+
+  .weeks {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .final h2 {
+    font-size: 52px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+  <a href="#home">HOME</a>
+  <a href="#weeks">WEEKS</a>
+  <a href="#letter">LETTER</a>
+  <a href="#end">♡</a>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="floating f1">💗</div>
+  <div class="floating f2">♡</div>
+  <div class="floating f3">💕</div>
+  <div class="floating f4">💌</div>
+
+  <div class="hero-inner">
+
+    <div class="kicker">
+      a tiny website for a very big thing
+    </div>
+
+    <h1>
+      4 Weeks<br>
+      <span>With Eric</span> 💗
+    </h1>
+
+    <p class="subtitle">
+      Four weeks of messages, inside jokes,
+      random conversations, smiles at the screen
+      and a whole lot of memories.
+    </p>
+
+    <a class="btn" href="#weeks">
+      OPEN OUR STORY ♡
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- WEEKS -->
+
+<section id="weeks">
+
+  <div class="title">
+
+    <div class="kicker">
+      our little timeline
+    </div>
+
+    <h2>
+      Four weeks.
+      Four chapters. 💕
+    </h2>
+
+    <p>
+      Each week gets its own little corner.
+      Add your favourite memories,
+      screenshots or messages here!
+    </p>
+
+  </div>
+
+
+  <div class="weeks">
+
+    <!-- WEEK 1 -->
+
+    <article class="card">
+
+      <div class="week">
+        ♡ Week One
+      </div>
+
+      <h3>
+        The beginning
+      </h3>
+
+      <p>
+        The week when everything started
+        feeling a little different.
+        Somewhere between all the conversations,
+        something clicked.
+      </p>
+
+      <div class="quote">
+        “No taksies backsies.” 💗
+      </div>
+
+    </article>
+
+
+    <!-- WEEK 2 -->
+
+    <article class="card">
+
+      <div class="week">
+        ♡ Week Two
+      </div>
+
+      <h3>
+        Getting closer
+      </h3>
+
+      <p>
+        More messages. More jokes.
+        More little things to remember.
+        And somehow, checking the phone
+        became way more exciting.
+      </p>
+
+      <div class="quote">
+        “Officially unofficially.” 💞
+      </div>
+
+    </article>
+
+
+    <!-- WEEK 3 -->
+
+    <article class="card">
+
+      <div class="week">
+        ♡ Week Three
+      </div>
+
+      <h3>
+        Our little world
+      </h3>
+
+      <p>
+        The inside jokes began.
+        The conversations got easier.
+        And ordinary days started collecting
+        tiny happy moments.
+      </p>
+
+      <div class="quote">
+        Two people + approximately
+        900 screenshots. 💌
+      </div>
+
+    </article>
+
+
+    <!-- WEEK 4 -->
+
+    <article class="card">
+
+      <div class="week">
+        ♡ Week Four
+      </div>
+
+      <h3>
+        Still us
+      </h3>
+
+      <p>
+        Four weeks later, here we are.
+        Not a perfect movie, just something
+        sweet and completely ours.
+      </p>
+
+      <div class="quote">
+        Still no taksies backsies.
+        Pinky promise. 💗
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <!-- TIMELINE -->
+
+  <div class="timeline">
+
+    <div class="timeline-line"></div>
+
+    <div class="dots">
+
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- LETTER -->
+
+<section id="letter">
+
+  <div class="title">
+
+    <div class="kicker">
+      from Avery
+    </div>
+
+    <h2>
+      A little letter 💌
+    </h2>
+
+  </div>
+
+
+  <div class="letter-wrap">
+
+    <div class="letter">
+
+      <h2>
+        Dear Eric,
+      </h2>
+
+      <p>
+        Four weeks sounds like such a small amount
+        of time, but somehow you've managed to fit
+        so many little memories into it.
+      </p>
+
+      <p>
+        Thank you for the conversations, the jokes,
+        the random moments and all the tiny things
+        that made these weeks feel special.
+      </p>
+
+      <p>
+        I don't know exactly what every next week
+        will look like, and that's okay.
+        I just hope we keep collecting moments
+        that make us smile when we look back at them.
+      </p>
+
+      <p>
+        So here's to four weeks —
+        and to all the memories still waiting
+        to happen. ♡
+      </p>
+
+      <div class="sign">
+        — Avery 💗
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- END -->
+
+<section class="final" id="end">
+
+  <div>
+
+    <div class="bigheart">
+      💗
+    </div>
+
+    <div class="kicker">
+      four weeks down
+    </div>
+
+    <h2>
+      More memories<br>
+      to come.
+    </h2>
+
+    <p>
+      No taksies backsies.
+      Pinky promise. ♡
+    </p>
+
+  </div>
+
+</section>
+
+
+<footer>
+  MADE WITH LOVE · AVERY × ERIC · 4 WEEKS 💕
+</footer>
+
+</body>
+</html>
+```
